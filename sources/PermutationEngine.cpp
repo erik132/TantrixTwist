@@ -148,7 +148,9 @@ void PermutationEngine::testRec(int index, int *victoryCount) {
     int i;
 
     for(i=0; i<2; i++) {
-        tile1->alignTo0();
+        if(!tile1->alignTo0()){
+            break;
+        }
         if (tile1->checkColors()) {
             if (index < (tiles.size() - 1)) {
                 testRec(index + 1, victoryCount);

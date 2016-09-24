@@ -66,9 +66,9 @@ void Tile::rotateRight() {
     colorConf->rotateRight();
 }
 
-void Tile::alignTo0() {
+bool Tile::alignTo0() {
     char color0;
-    int side;
+    int side, tries;
 
     if(neighbours[0] != NULL) {
         color0 = neighbours[0]->getNeighbourColor(0);
@@ -79,11 +79,15 @@ void Tile::alignTo0() {
         side = 5;
     }
 
-
+    tries = 0;
     do{
         rotateRight();
+        tries++;
+        if(tries > TILE_SIDES){
+            return false;
+        }
     }while(color0 != colorConf->getColor(side));
-
+    return true;
 }
 
 bool Tile::checkColors() {

@@ -37,7 +37,7 @@ public:
     void rotateRight();
     void resetNeighbours();
     std::string printNeighbours();
-    void alignTo0();
+    bool alignTo0();
     bool checkColors();
 
     char getNeighbourColor(int neighbourSide);
