@@ -21,7 +21,7 @@ int main() {
     tile = new Tile(colorConf);
     engine.addTile(tile);
 
-    colorConf = new ColorConf(TANTRIX04, 4);
+    /*colorConf = new ColorConf(TANTRIX04, 4);
     tile = new Tile(colorConf);
     engine.addTile(tile);
 
@@ -31,15 +31,16 @@ int main() {
 
     colorConf = new ColorConf(TANTRIX06, 6);
     tile = new Tile(colorConf);
-    engine.addTile(tile);
+    engine.addTile(tile);*/
 
 
     std::cout << "Hello, World!" << std::endl;
     engine.resetPermut();
-    engine.testPermut();
-    /*std::cout<< engine.printOrder() << std::endl;
+    std::cout<< engine.printOrder() << std::endl;
     std::cout << engine.printNeighbours() << std::endl;
-    while(engine.nextPermut()) {
+    std::cout << "victory count: " << engine.testPermut() << "\n";
+
+    /*while(engine.nextPermut()) {
         std::cout << engine.printOrder() << std::endl;
         std::cout << engine.printNeighbours() << std::endl;
     }*/

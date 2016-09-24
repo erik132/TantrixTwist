@@ -144,13 +144,13 @@ int PermutationEngine::testPermut() {
 }
 
 void PermutationEngine::testRec(int index, int *victoryCount) {
-    Tile* tile = tiles[order[index]];
+    Tile* tile1 = tiles[order[index]];
     int i;
 
     for(i=0; i<2; i++) {
-        tile->alignTo0();
-        if (tile->checkColors()) {
-            if (index != (tiles.size() - 1)) {
+        tile1->alignTo0();
+        if (tile1->checkColors()) {
+            if (index < (tiles.size() - 1)) {
                 testRec(index + 1, victoryCount);
             }else{
                 *victoryCount = *victoryCount + 1;
