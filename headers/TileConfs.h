@@ -23,6 +23,8 @@
 #define TANTRIX12 "brryby"
 #define TANTRIX13 "ybbyrr"
 #define TANTRIX14 "ryybbr"
+#define TANTRIX15 "rggryy"
+#define TANTRIX16 "yggyrr"
 
 
 #endif //TASK1_1_TILECONFS_H
