@@ -21,6 +21,7 @@ public:
 
     std::string getColors();
     void rotateRight();
+    char getColor(int index);
 
 };
 

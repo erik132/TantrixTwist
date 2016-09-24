@@ -16,6 +16,8 @@ private:
 
     void attachNeighbours();
     void detachNeighbours();
+    void testRec(int index, int * victoryCount);
+
 
 public:
 
@@ -25,6 +27,10 @@ public:
     bool nextPermut();
     std::string printOrder();
     std::string printNeighbours();
+    std::string printTileState();
+    /* true, found solution, false no solution for this permut */
+    int testPermut();
+
 
 };
 

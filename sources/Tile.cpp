@@ -65,3 +65,34 @@ std::string Tile::getSignature() {
 void Tile::rotateRight() {
     colorConf->rotateRight();
 }
+
+void Tile::alignTo0() {
+    char color0 = neighbours[0]->getNeighbourColor(0);
+
+    do{
+        rotateRight();
+    }while(color0 != colorConf->getColor(0));
+
+}
+
+bool Tile::checkColors() {
+    int i;
+    char colorOther;
+
+    for(i=4; i<TILE_SIDES; i++){
+        colorOther = neighbours[i]->getNeighbourColor(i);
+        if(colorOther != colorConf->getColor(i)){
+            return false;
+        }
+
+    }
+    return true;
+}
+
+char Tile::getNeighbourColor(int neighbourSide) {
+    neighbourSide = neighbourSide + HALF_TILE;
+    if(neighbourSide > (TILE_SIDES-1)){
+        neighbourSide = neighbourSide - TILE_SIDES;
+    }
+    return colorConf->getColor(neighbourSide);
+}

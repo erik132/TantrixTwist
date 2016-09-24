@@ -35,3 +35,6 @@ void ColorConf::rotateRight() {
 
 }
 
+char ColorConf::getColor(int index) {
+    return colors[index];
+}

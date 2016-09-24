@@ -129,3 +129,43 @@ std::string PermutationEngine::printOrder() {
 
     return ss.str();
 }
+
+int PermutationEngine::testPermut() {
+    int el1Truns, i;
+    int tileCount = tiles.size();
+    int victoryCount = 0;
+
+    for(el1Truns = 0; el1Truns < TILE_SIDES; el1Truns++){
+        tiles[order[0]]->rotateRight();
+        testRec(1,&victoryCount);
+    }
+
+    return victoryCount;
+}
+
+void PermutationEngine::testRec(int index, int *victoryCount) {
+    Tile* tile = tiles[order[index]];
+    int i;
+
+    for(i=0; i<2; i++) {
+        tile->alignTo0();
+        if (tile->checkColors()) {
+            if (index != (tiles.size() - 1)) {
+                testRec(index + 1, victoryCount);
+            }else{
+                *victoryCount = *victoryCount + 1;
+                std::cout << printTileState() << std::endl;
+            }
+        }
+    }
+}
+
+std::string PermutationEngine::printTileState() {
+    std::stringstream ss;
+    int i, tileCount = tiles.size();
+    for(i=0; i<tileCount; i++) {
+        ss << tiles[order[i]]->getSignature() << "\n";
+    }
+
+    return ss.str();
+}

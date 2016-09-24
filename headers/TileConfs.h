@@ -5,7 +5,9 @@
 #ifndef TASK1_1_TILECONFS_H
 #define TASK1_1_TILECONFS_H
 
+//never change this because of hexagon and oops
 #define TILE_SIDES 6
+#define HALF_TILE 3
 
 #define TANTRIX01 "ryybrb"
 #define TANTRIX02 "byybrr"
