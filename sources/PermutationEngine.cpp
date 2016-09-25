@@ -156,7 +156,7 @@ void PermutationEngine::testRec(int index, int *victoryCount) {
                 testRec(index + 1, victoryCount);
             }else{
                 *victoryCount = *victoryCount + 1;
-                std::cout << printTileState() << std::endl;
+                //std::cout << printTileState() << std::endl;
             }
         }
     }

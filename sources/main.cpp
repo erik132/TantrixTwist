@@ -92,7 +92,7 @@ int main() {
             std::cout << "victory count: " << vicotryCount << "\n";*/
             totalWins = totalWins + vicotryCount;
         }
-        if(totalWins >  1){
+        if(totalWins >  208123123){
 
             break;
         }
